@@ -3,14 +3,11 @@
 ## Initialization
 
 ```Shell
-npm run setup or npm install
+npm install
 ```
 
-Initializes a new project with this boilerplate. Installs the dependencies and initializes a new repository.
+Initializes a new project with this boilerplate. Installs the dependencies and start work.
 
-> Note: This command is self-destructive, once you've run it the init script is
-> gone forever. This is for your own safety, so you can't delete your project's
-> history irreversibly by accident.
 
 ## Development
 
@@ -29,10 +26,11 @@ Starts the development server running on `http://localhost:3000`
 ```Shell
 npm run generate
 ```
+You can create `components, containers, routes, selectors and sagas`
 
 Allows you to auto-generate boilerplate code for common parts of your
 application, specifically `component`s, and `container`s. You can
-also run `npm run generate <part>` to skip the first selection. (e.g. `npm run generate container`)
+also run `npm run generate <part>` to skip the first selection. (e.g. `npm run generate container ConatainerName`)
 
 ## Server
 
@@ -77,8 +75,7 @@ see your work live!
 
 ## Testing
 
-See the [testing documentation](../testing/README.md) for detailed information
-about our testing setup!
+We will add testing documentation for detailed information and about our testing setup!
 
 ## Unit testing
 
