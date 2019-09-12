@@ -8,12 +8,16 @@ import { defineMessages } from 'react-intl';
 export const scope = 'boilerplate.components.Header';
 
 export default defineMessages({
-  home: {
-    id: `${scope}.home`,
-    defaultMessage: 'Home',
+  salutation: {
+    id: `${scope}.salutation`,
+    defaultMessage: 'Hi',
   },
-  productivity: {
-    id: `${scope}.productivity`,
-    defaultMessage: 'Productivity',
+  userName: {
+    id: `${scope}.userName`,
+    defaultMessage: 'Amrit',
+  },
+  subHead: {
+    id: `${scope}.subHead`,
+    defaultMessage: 'Partner Head Ofﬁce',
   },
 });

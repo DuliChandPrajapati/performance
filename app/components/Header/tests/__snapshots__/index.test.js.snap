@@ -1,26 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Header /> should render a div 1`] = `
-<div>
+<header
+  class="app-header StyledHeader-sc-1h56b3s-0 QAGME"
+>
   <div
-    class="NavBar-sc-1s4x0xm-0 cRnOFu"
+    class="container-fluid"
   >
-    <a
-      class="HeaderLink-i2lytn-0 liOpIh"
-      href="/"
+    <div
+      class="row"
     >
-      <span>
-        Home
-      </span>
-    </a>
-    <a
-      class="HeaderLink-i2lytn-0 liOpIh"
-      href="/productivity"
-    >
-      <span>
-        Productivity
-      </span>
-    </a>
+      <div
+        class="logo col-2"
+      >
+        <a
+          href="/"
+        >
+          <img
+            alt="Max Life - Logo"
+            class="Img-jbgljj-0 gnuli"
+            src="IMAGE_MOCK"
+          />
+        </a>
+      </div>
+      <div
+        class="col-8"
+      >
+        <h2>
+          <span>
+            Hi
+          </span>
+           
+          <span>
+            <span>
+              Amrit
+            </span>
+          </span>
+          !
+        </h2>
+        <h4>
+          <span>
+            Partner Head Ofﬁce
+          </span>
+        </h4>
+      </div>
+      <div
+        class="col"
+      />
+    </div>
   </div>
-</div>
+</header>
 `;

@@ -1,7 +1,8 @@
 [
   {
-    "boilerplate.components.Header.home": "Home",
-    "boilerplate.components.Header.productivity": "Productivity",
+    "boilerplate.components.Header.salutation": "Hi",
+    "boilerplate.components.Header.userName": "Amrit",
+    "boilerplate.components.Header.subHead": "Partner Head Ofﬁce",
     "boilerplate.components.Footer.home": "Home",
     "boilerplate.components.Footer.productivity": "Productivity"
   }
