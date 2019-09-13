@@ -42,7 +42,8 @@
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "prettify": "prettier --write"
+    "prettify": "prettier --write",
+    "deploy": "aws s3 sync build/ s3://agent-view/"
   },
   "browserslist": [
     "last 2 versions",
@@ -80,6 +81,7 @@
     "intl": "1.2.5",
     "invariant": "2.2.4",
     "ip": "1.1.5",
+    "jquery": "^3.4.1",
     "lodash": "4.17.11",
     "minimist": "1.2.0",
     "prop-types": "15.7.2",

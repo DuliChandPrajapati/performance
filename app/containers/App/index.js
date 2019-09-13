@@ -17,9 +17,13 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Productivity from 'containers/Productivity/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import HeaderLink from 'components/HeaderLink';
+import Sales from 'components/Sales';
 
 import GlobalStyle from '../../global-styles';
-import '!style-loader!css-loader!bootstrap/dist/css/bootstrap.css';
+import '!style-loader!css-loader!bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/js/dist/collapse';
+import 'bootstrap/js/dist/tab';
 
 const AppWrapper = styled.div`
   max-width: calc(1440px + 16px * 2);
@@ -33,15 +37,17 @@ export default function App() {
   return (
     <AppWrapper>
       <Helmet
-        titleTemplate="%s - Max Life Boilerplate"
-        defaultTitle="Max Life Boilerplate"
+        titleTemplate="%s - Max Life Agent View"
+        defaultTitle="Max Life Agent View"
       >
-        <meta name="description" content="A Max Life Boilerplate application" />
+        <meta name="description" content="A Max Life Agent View" />
       </Helmet>
       <Header />
+      <HeaderLink />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/productivity" component={Productivity} />
+        <Route path="/sales" component={Sales} />
         <Route component={NotFoundPage} />
       </Switch>
       <Footer />
