@@ -15,8 +15,9 @@ import { useInjectReducer } from 'utils/injectReducer';
 import makeSelectSelfAdm from './selectors';
 import reducer from './reducer';
 import saga from './saga';
+import { DoingSelfAdmRequest } from './actions';
 
-export function SelfAdm() {
+export function SelfAdm({ onDoingSelfAdmRequest }) {
   useInjectReducer({ key: 'selfAdm', reducer });
   useInjectSaga({ key: 'selfAdm', saga });
 
@@ -25,6 +26,7 @@ export function SelfAdm() {
 
 SelfAdm.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  onDoingSelfAdmRequest: PropTypes.func,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -33,7 +35,7 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    dispatch,
+    onDoingSelfAdmRequest: evt => dispatch(DoingSelfAdmRequest()),
   };
 }
 

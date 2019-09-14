@@ -19,7 +19,6 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import HeaderLink from 'components/HeaderLink';
 import Sales from 'components/Sales';
-import SelfAdm from 'containers/SelfAdm/Loadable';
 
 import GlobalStyle from '../../global-styles';
 import '!style-loader!css-loader!bootstrap/dist/css/bootstrap.min.css';

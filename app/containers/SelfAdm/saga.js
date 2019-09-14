@@ -13,10 +13,12 @@ export default function* selfAdmSaga() {
     const data = yield call(request, requestURL, {
       method: AppConstants.HTTP_POST,
       headers: AppConstants.CLIENT_AUTH_HEADER,
-      data: dataRequest,
+      body: JSON.stringify(dataRequest),
     });
+    // console.log(data);
     yield put(data);
   } catch (err) {
+    // console.log(err);
     yield put(err);
   }
 }
