@@ -15,6 +15,7 @@ import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
 import Table from 'components/Table';
 import TeamTable from 'components/TeamTable';
+import SelfAdm from 'containers/SelfAdm/Loadable';
 import makeSelectProductivity from './selectors';
 import reducer from './reducer';
 import saga from './saga';
@@ -110,6 +111,7 @@ export function Productivity() {
       </div>
       <Table />
       <TeamTable />
+      <SelfAdm />
     </StyledProductivity>
   );
 }
