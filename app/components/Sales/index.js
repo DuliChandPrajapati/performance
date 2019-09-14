@@ -27,7 +27,11 @@ export function Sales() {
           <div role="tabpanel" className="tab-pane in active" id="applied">
             <StyledTable className="cstm-table cstm-pad">
               <div className="table-btns">
-                <form className="cstm-frm" for= "sales form" aria-label="sales form">
+                <form
+                  className="cstm-frm"
+                  htmlFor="sales form"
+                  aria-label="sales form"
+                >
                   <label className="form-group">
                     <select className="form-control" aria-label="select team">
                       <option>MTD</option>

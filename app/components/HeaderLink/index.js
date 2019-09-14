@@ -8,6 +8,7 @@ import React from 'react';
 import productivityIcon from 'images/productivity-icon.png';
 import salesIcon from 'images/sales-icon.png';
 import StyledHeaderLink from './StyledHeaderLink';
+import NavLink from './NavLink';
 
 const items = [
   {
@@ -26,12 +27,12 @@ const list = [];
 items.forEach(function(item) {
   list.push(
     <li className="active" key={item.value}>
-      <a href={item.url}>
+      <NavLink to={item.url}>
         <span className="img">
           <img src={item.imageUrl} alt={item.value} />
         </span>{' '}
         <p>{item.value}</p>
-      </a>
+      </NavLink>
     </li>,
   );
 });
