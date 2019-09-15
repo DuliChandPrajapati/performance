@@ -16,8 +16,8 @@ export default function* selfAdmSaga() {
       headers: AppConstants.CLIENT_AUTH_HEADER,
       body: dataRequest,
     });
-    const stringData = JSON.stringify(responseData);
-    const data = JSON.parse(stringData);
+    const dataObject = JSON.parse(responseData.response);
+    const data = JSON.stringify(dataObject);
     // console.log(data);
     yield put(fetchAdmData(data));
   } catch (err) {

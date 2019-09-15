@@ -47,14 +47,36 @@ function ProductivityAccordian() {
     );
   });
   return (
-    <div
-      id="collapse-2"
-      className="collapse"
-      data-parent="#accordion"
-      aria-labelledby="heading-2"
-    >
-      <div className="card-body">
-        <ul className="prod-list">{prodItemsList}</ul>
+    <div className="prod-section">
+      <div className="container-fluid">
+        <div id="accordion" className="cstm-accrdion">
+          <div className="card">
+            <div className="card-header" id="heading-2">
+              <h5 className="mb-0">
+                <a
+                  className="collapsed"
+                  role="button"
+                  data-toggle="collapse"
+                  href="#collapse-2"
+                  aria-expanded="false"
+                  aria-controls="collapse-2"
+                >
+                  Productivity
+                </a>
+              </h5>
+            </div>
+            <div
+              id="collapse-2"
+              className="collapse"
+              data-parent="#accordion"
+              aria-labelledby="heading-2"
+            >
+              <div className="card-body">
+                <ul className="prod-list">{prodItemsList}</ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

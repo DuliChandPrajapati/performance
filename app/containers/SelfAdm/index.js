@@ -4,7 +4,7 @@
  *
  */
 
-import React, { memo } from 'react';
+import React, { memo, useState, useEffect } from 'react';
 // import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -12,16 +12,23 @@ import { compose, bindActionCreators } from 'redux';
 
 import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
+import ProductivityView from 'components/ProductivityView';
 import makeSelectSelfAdm from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import { requestAdmData, fetchAdmData } from './actions';
 
-export function SelfAdm() {
+export function SelfAdm({ selfAdm }) {
   useInjectReducer({ key: 'selfAdm', reducer });
   useInjectSaga({ key: 'selfAdm', saga });
+  // const data = selfAdm;
+  // useEffect(() =>{
+  //   if(!data.loading){
+  //     const admData = data;
+  //   }
+  // });
 
-  return <div />;
+  return <ProductivityView admData={selfAdm} />;
 }
 
 SelfAdm.propTypes = {
