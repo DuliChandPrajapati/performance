@@ -4,21 +4,24 @@ import { call, put } from 'redux-saga/effects';
 import * as AppConstants from 'utils/constants';
 import request from 'utils/request';
 import * as SelfADMConstants from './constants';
+import { fetchAdmData, errorAdmData } from './actions';
 
 export default function* selfAdmSaga() {
   const requestURL = SelfADMConstants.SELF_ADM_API_URL;
-  const dataRequest = SelfADMConstants.REQUEST_BODY;
+  const dataRequest = JSON.stringify(SelfADMConstants.REQUEST_BODY);
   try {
     // Call our request helper (see 'utils/request')
-    const data = yield call(request, requestURL, {
+    const responseData = yield call(request, requestURL, {
       method: AppConstants.HTTP_POST,
       headers: AppConstants.CLIENT_AUTH_HEADER,
-      body: JSON.stringify(dataRequest),
+      body: dataRequest,
     });
+    const stringData = JSON.stringify(responseData);
+    const data = JSON.parse(stringData);
     // console.log(data);
-    yield put(data);
+    yield put(fetchAdmData(data));
   } catch (err) {
     // console.log(err);
-    yield put(err);
+    yield put(errorAdmData(err));
   }
 }

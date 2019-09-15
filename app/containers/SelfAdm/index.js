@@ -5,19 +5,19 @@
  */
 
 import React, { memo } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { compose } from 'redux';
+import { compose, bindActionCreators } from 'redux';
 
 import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
 import makeSelectSelfAdm from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import { DoingSelfAdmRequest } from './actions';
+import { requestAdmData, fetchAdmData } from './actions';
 
-export function SelfAdm({ onDoingSelfAdmRequest }) {
+export function SelfAdm() {
   useInjectReducer({ key: 'selfAdm', reducer });
   useInjectSaga({ key: 'selfAdm', saga });
 
@@ -25,8 +25,7 @@ export function SelfAdm({ onDoingSelfAdmRequest }) {
 }
 
 SelfAdm.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  onDoingSelfAdmRequest: PropTypes.func,
+  // dispatch: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -35,7 +34,8 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    onDoingSelfAdmRequest: evt => dispatch(DoingSelfAdmRequest()),
+    dispatch,
+    ...bindActionCreators({ requestAdmData, fetchAdmData }, dispatch),
   };
 }
 

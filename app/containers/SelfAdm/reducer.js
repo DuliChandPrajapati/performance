@@ -10,7 +10,7 @@ export const initialState = {};
 
 /* eslint-disable default-case, no-param-reassign */
 const selfAdmReducer = (state = initialState, action) =>
-  produce(state, (/* draft */) => {
+  produce(state, () => {
     switch (action.type) {
       case SelfADMConstants.SELF_ADM_API_REQUEST:
         console.log(action);
@@ -18,11 +18,11 @@ const selfAdmReducer = (state = initialState, action) =>
 
       case SelfADMConstants.SELF_ADM_API_SUCCESS:
         console.log(action);
-        return state.merge({ fakeData: action.payload });
+        return action;
 
-      case SelfADMConstants.SELF_ADM_API_SUCCESS:
+      case SelfADMConstants.SELF_ADM_API_FAILURE:
         console.log(action);
-        return state;
+        return action;
 
       default:
         return state;
