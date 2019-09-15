@@ -1,28 +1,35 @@
-import { call, put } from 'redux-saga/effects';
+import { call, put, select, takeLatest, take } from 'redux-saga/effects';
 
 // Individual exports for testing
 import * as AppConstants from 'utils/constants';
 import request from 'utils/request';
 import * as SelfADMConstants from './constants';
+import {SELF_ADM_API_REQUEST} from './constants';
 import { fetchAdmData, errorAdmData } from './actions';
 
 /* -- SELF ADM SAGA --*/
 export default function* selfAdmSaga() {
   const requestURL = SelfADMConstants.SELF_ADM_API_URL;
   const dataRequest = JSON.stringify(SelfADMConstants.REQUEST_BODY);
+  console.log("saga - before ", requestURL);
   try {
     const responseData = yield call(request, requestURL, {
       method: AppConstants.HTTP_POST,
       headers: AppConstants.CLIENT_AUTH_HEADER,
       body: dataRequest,
     });
-    const dataObject = JSON.parse(responseData.response);
-    const data = JSON.stringify(dataObject);
-    yield put(fetchAdmData(data));
+      const dataObject = JSON.parse(responseData.response);
+      const responseDataItem = JSON.stringify(dataObject);
+    yield put(fetchAdmData(responseDataItem));
+
+    // yield take(fetchAdmData(data));
   } catch (err) {
     yield put(errorAdmData(err));
   }
 }
+
+
+
 
 // /* -- SELF ZONALRMOH SAGA --*/
 // export function* selfZonalrmohSaga() {

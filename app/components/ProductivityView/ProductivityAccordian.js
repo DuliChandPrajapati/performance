@@ -1,10 +1,15 @@
 import React from 'react';
 
-function ProductivityAccordian() {
+function ProductivityAccordian({dataAccordion}) {
+  console.log("according ----", JSON.stringify(dataAccordion));
+    const listData = JSON.stringify(dataAccordion);
+    console.log("list data item", JSON.parse(listData));
+    // console.log(listData.ssoId);
+
   const prodItems = [
     {
       id: 'Case Active Agents',
-      value: 15,
+      value: 9,
     },
     {
       id: 'Active Case Rate',

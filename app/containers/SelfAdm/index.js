@@ -21,12 +21,13 @@ import { requestAdmData, fetchAdmData } from './actions';
 export function SelfAdm({ selfAdm }) {
   useInjectReducer({ key: 'selfAdm', reducer });
   useInjectSaga({ key: 'selfAdm', saga });
-  // const data = selfAdm;
-  // useEffect(() =>{
-  //   if(!data.loading){
-  //     const admData = data;
-  //   }
-  // });
+  useEffect(() =>{
+    const data = selfAdm;
+    if(data.loading == true){
+      const  admData = selfAdm;
+    }
+  });
+  console.log("self Data ---= ", selfAdm);
 
   return <ProductivityView admData={selfAdm} />;
 }
