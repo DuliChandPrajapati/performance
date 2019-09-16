@@ -25,3 +25,6 @@ export default function* selfAdmSaga() {
     yield put(errorAdmData(err));
   }
 }
+// export default function* latestAdmSaga() {
+//   yield takeLatest(SelfADMConstants.SELF_ADM_API_REQUEST, selfAdmSaga);
+// }

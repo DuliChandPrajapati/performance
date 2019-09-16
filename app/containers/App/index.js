@@ -14,8 +14,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
-import SelfAdm from 'containers/SelfAdm/Loadable';
-// import ProductivityView from 'components/ProductivityView';
+import ProductivityView from 'components/ProductivityView';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import HeaderLink from 'components/HeaderLink';
@@ -47,7 +46,7 @@ export default function App() {
       <HeaderLink />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/productivity" component={SelfAdm} />
+        <Route path="/productivity" component={ProductivityView} />
         <Route path="/sales" component={Sales} />
         <Route component={NotFoundPage} />
       </Switch>

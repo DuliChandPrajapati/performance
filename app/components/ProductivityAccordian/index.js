@@ -1,6 +1,13 @@
-import React from 'react';
+/**
+ *
+ * ProductivityAccordian
+ *
+ */
 
-function ProductivityAccordian() {
+import React from 'react';
+import PropsTypes from 'prop-types';
+
+function ProductivityAccordian({ accordianData }) {
   const prodItems = [
     {
       id: 'Case Active Agents',
@@ -82,6 +89,8 @@ function ProductivityAccordian() {
   );
 }
 
-ProductivityAccordian.prototype = {};
+ProductivityAccordian.prototype = {
+  accordianData: PropsTypes.object,
+};
 
 export default ProductivityAccordian;

@@ -1,7 +1,8 @@
 import React from 'react';
+import PropsTypes from 'prop-types';
 import StyledTable from './styledTable';
 
-function Table() {
+function Table({ tableData }) {
   return (
     <StyledTable className="cstm-table">
       <div className="container-fluid">
@@ -40,5 +41,7 @@ function Table() {
     </StyledTable>
   );
 }
-
+Table.prototype = {
+  tableData: PropsTypes.object,
+};
 export default Table;
