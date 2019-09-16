@@ -11,7 +11,7 @@ function ProductivityAccordian({ accordianData }) {
   const prodItems = [
     {
       id: 'Case Active Agents',
-      value: 15,
+      value: 9,
     },
     {
       id: 'Active Case Rate',

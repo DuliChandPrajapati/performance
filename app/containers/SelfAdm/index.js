@@ -4,7 +4,7 @@
  *
  */
 
-import React, { memo, useEffect } from 'react';
+import React, { memo, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -21,28 +21,35 @@ import saga from './saga';
 export function SelfAdm({ selfAdm }) {
   useInjectReducer({ key: 'selfAdm', reducer });
   useInjectSaga({ key: 'selfAdm', saga });
+  const selfAdmSate = makeSelectSelfAdm() || {};
 
   useEffect(() => {
-    if (!selfAdm.loading) {
-      // const admData = selfAdm;
+    const fetchData = () => {
+      try {
+        const result = selfAdmSate;
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, [selfAdmSate]);
+
+  const dataforView = {};
+  // selfAdm = JSON.parse(selfAdm);
+  console.log('newAdmData', selfAdm.data);
+  Object.keys(selfAdm.data).map(function(key, item) {
+    console.log('newAdmData key', item);
+    if (key == 'response') {
+      Object.asign(responseData, selfAdm.data[key]);
+      console.log('responseData', responseData);
+      Object.keys(responseData).map(function(payloadKey) {
+        if (payloadKey == 'payload') {
+          Object.asign(dataforView, responseData[payloadKey]);
+          console.log(`dataforView ${dataforView.ssoId}`);
+        }
+      });
     }
   });
-  console.log('self Data', selfAdm);
-  // const dataforView = {};
-  // const newAdmData = {};
-  // setTimeout(() => {
-  //   Object.assign(newAdmData, selfAdm);
-  // }, 20000);
-  // Object.keys(newAdmData).map(function(key) {
-  //   if (key == 'respnse') {
-  //     Object.asign(responseData, newAdmData[key]);
-  //     Object.keys(responseData).map(function(payloadKey) {
-  //       if (payloadKey == 'payload') {
-  //         Object.asign(dataforView, responseData[payloadKey]);
-  //       }
-  //     });
-  //   }
-  // });
 
   return (
     <div>
