@@ -1,9 +1,9 @@
 // import produce from 'immer';
-import productivityReducer from '../reducer';
+import selfAdmReducer from '../reducer';
 // import { someAction } from '../actions';
 
 /* eslint-disable default-case, no-param-reassign */
-describe('productivityReducer', () => {
+describe('selfAdmReducer', () => {
   let state;
   beforeEach(() => {
     state = {
@@ -13,7 +13,7 @@ describe('productivityReducer', () => {
 
   it('returns the initial state', () => {
     const expectedResult = state;
-    expect(productivityReducer(undefined, {})).toEqual(expectedResult);
+    expect(selfAdmReducer(undefined, {})).toEqual(expectedResult);
   });
 
   /**

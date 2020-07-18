@@ -1,6 +1,6 @@
 /**
  *
- * Asynchronously loads the component for Productivity
+ * Asynchronously loads the component for SelfAdm
  *
  */
 
